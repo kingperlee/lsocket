@@ -21,9 +21,9 @@ CC=gcc
 CFLAGS=-Wall -fPIC $(OPT) $(DBG)
 
 # if this does not work, just set it to your version number
-LUA_VERSION=$(shell lua -e "print((string.gsub(_VERSION, '^.+ ', '')))")
-LUA_DIR = /usr/local
-LUA_INCDIR=$(LUA_DIR)/include
+LUA_VERSION=lua$(shell lua -e "print((string.gsub(_VERSION, '^.+ ', '')))")
+LUA_DIR = /usr
+LUA_INCDIR=$(LUA_DIR)/include/$(LUA_VERSION)
 INST_LIBDIR=$(LUA_DIR)/lib/lua/$(LUA_VERSION)
 
 ifeq ($(OS),Darwin)
